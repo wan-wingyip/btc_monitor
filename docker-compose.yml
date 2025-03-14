@@ -1,0 +1,15 @@
+version: '3.8'
+services:
+  app:
+    build: .
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./app:/app/app
+    environment:
+      - DATABASE_URI=sqlite:///bitcoin_price.db
+      - BTC_PRICE_THRESHOLD=2.0  # 2% threshold
+      - BTC_CHECK_INTERVAL=60    # Check every 60 seconds
+      - MONITORING_WINDOW=300    # 5 minutes (300 seconds)
+      - COINCAP_API_KEY=         # Optional, add your API key here
+    restart: unless-stopped

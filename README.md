@@ -23,7 +23,7 @@ The web dashboard shows:
 ## Project Structure
 
 ```
-bitcoin-price-monitor/
+btc_monitor/
 ├── app/
 │   ├── __init__.py          # Init Flask application
 │   ├── config.py            # Configuration settings
@@ -96,7 +96,7 @@ Environment variables set in `.env` file:
 1. Clone the repository:
    ```bash
    git clone <repository-url>
-   cd bitcoin-price-monitor
+   cd btc_monitor
    ```
 
 2. Create a virtual environment:
