@@ -3,6 +3,7 @@ import logging
 from datetime import datetime, timedelta
 from flask import current_app
 from .models import db, BitcoinPrice, PriceAlert
+from .routes import notify_price_check
 
 logger = logging.getLogger(__name__)
 
@@ -29,6 +30,9 @@ def get_bitcoin_price():
         btc_price = BitcoinPrice(price=price_usd, price_usd=price_usd)
         db.session.add(btc_price)
         db.session.commit()
+        
+        # Notify clients about the price update
+        notify_price_check(current_app)
         
         logger.info(f"Bitcoin price: ${price_usd:.2f}")
         return price_usd

@@ -10,7 +10,7 @@ class Config:
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     
     # Bitcoin price monitoring configuration
-    BTC_PRICE_THRESHOLD = float(os.getenv('BTC_PRICE_THRESHOLD', '1.0'))  # Default 1% threshold
+    BTC_PRICE_THRESHOLD = float(os.getenv('BTC_PRICE_THRESHOLD', '5.0'))  # Default 1% threshold
     BTC_CHECK_INTERVAL = int(os.getenv('BTC_CHECK_INTERVAL', '60'))  # Default check every 60 seconds
     MONITORING_WINDOW = int(os.getenv('MONITORING_WINDOW', '300'))  # Default 5 minutes (300 seconds)
     

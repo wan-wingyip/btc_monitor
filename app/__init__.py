@@ -4,7 +4,6 @@ from flask_migrate import Migrate
 from flask_apscheduler import APScheduler
 from .config import Config
 from .models import db
-from .routes import register_routes
 
 # Configure logging
 logging.basicConfig(
@@ -16,7 +15,7 @@ logging.basicConfig(
 scheduler = APScheduler()
 
 def create_app(config_class=Config):
-    app = Flask(__name__)
+    app = Flask(__name__, static_folder='static', template_folder='templates')
     app.config.from_object(config_class)
     
     # Initialize extensions
@@ -25,6 +24,7 @@ def create_app(config_class=Config):
     scheduler.init_app(app)
     
     # Register routes
+    from .routes import register_routes
     register_routes(app)
     
     # Start scheduler
