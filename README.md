@@ -120,13 +120,3 @@ Environment variables set in `.env` file:
 
 6. Access the dashboard at http://localhost:5000
 
-## Potential API Endpoints
-
-The application provides the following API endpoints:
-
-- `GET /health` - Health check
-- `GET /api/prices` - Get prices for the last monitoring window
-- `GET /api/alerts` - Get all price alerts
-- `GET /api/stream` - Server-sent events endpoint for real-time updates
-- `GET /config` - Get current monitoring configuration
-
