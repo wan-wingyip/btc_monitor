@@ -69,7 +69,7 @@ Environment variables set in `.env` file:
 1. Clone the repository:
    ```bash
    git clone <repository-url>
-   cd bitcoin-price-monitor
+   cd btc_monitor
    ```
 
 2. Modify the `.env` file with your desired settings.
