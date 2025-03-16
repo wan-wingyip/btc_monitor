@@ -5,9 +5,9 @@ services:
       - "5000:5000"
     volumes:
       - ./app:/app/app
-      - ./app/instance:/app/instance
+      - ./instance:/app/instance
     environment:
-      - DATABASE_URI=sqlite:///bitcoin_price.db
+      - DATABASE_URI=sqlite:////app/instance/bitcoin_price.db
       - BTC_PRICE_THRESHOLD=2.0  # 2% threshold
       - BTC_CHECK_INTERVAL=60    # Check every 60 seconds
       - MONITORING_WINDOW=300    # 5 minutes (300 seconds)

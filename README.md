@@ -35,6 +35,7 @@ btc_monitor/
 │   │   └── layout.html      # Base layout template
 │   └── static/              # Static assets
 │       └── main.js          # JavaScript for real-time updates
+├── instance/                # database filepath
 ├── migrations/              # Database migrations
 ├── Dockerfile               # Docker file for image creation
 ├── docker-compose.yml       # Docker Compose configuration
@@ -76,19 +77,19 @@ Environment variables set in `.env` file:
 
 3. Build and start the Docker container:
    ```bash
-   docker-compose up -d
+   docker compose up -d
    ```
 
 4. Access the dashboard at http://localhost:5000
 
 5. View logs:
    ```bash
-   docker-compose logs -f
+   docker compose logs -f
    ```
 
 6. Stop the application:
    ```bash
-   docker-compose down
+   docker compose down
    ```
 
 ### Running Locally
